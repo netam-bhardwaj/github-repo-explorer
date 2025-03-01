@@ -1,6 +1,6 @@
 {
   "name": "github-repo-explorer",
-  "private": true,
+  "homepage": "https://netam-bhardwaj.github.io/github-repo-explorer/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "vite build && gh-pages -d dist"
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "axios": "^1.8.1",

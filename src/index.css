@@ -41,16 +41,17 @@ body {
 
 .repo-header-details {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-  width: 100%;
   gap: 1rem;
 }
 
 .repo-header-details-left {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 10px;
+  flex-grow: 1;
+  min-width: 0;
 }
 
 .avatar {
@@ -58,6 +59,14 @@ body {
   height: 40px;
   border-radius: 50%;
   margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.repo-header-details-left h1 {
+  font-size: 1.2rem;
+  word-break: break-word;
+  flex: 1;
+  min-width: 0;
 }
 
 .repo-header h3 {
@@ -95,9 +104,8 @@ body {
   text-decoration: underline;
 }
 
-/* Repo detail styles */
 .repo-detail {
-  /* max-width: 800px; */
+  word-wrap: break-word;
   margin: 0 auto;
   background: white;
   padding: 2rem;
@@ -129,7 +137,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #0366d6; /* GitHub's primary blue */
+  background-color: #0366d6;
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 6px;
@@ -143,6 +151,7 @@ body {
   gap: 10px;
   align-items: center;
   margin-bottom: 20px;
+  color: gray;
 }
 
 .loading {
@@ -272,4 +281,14 @@ body {
 .error-state p {
   margin-bottom: 1rem;
   color: #dc2626;
+}
+
+.repo-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.repo-link:hover {
+  text-decoration: underline !important;
 }

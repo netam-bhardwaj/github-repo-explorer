@@ -120,12 +120,10 @@ export const RepoDetail: React.FC = () => {
 
   return (
     <div>
-      <div className="back-link">
-        <ArrowLeft style={{ color: "gray" }} />
-        <Link to="/" style={{ color: "gray" }}>
-          Back to Repositories
-        </Link>
-      </div>
+      <Link to="/" className="back-link">
+        <ArrowLeft />
+        <span>Back to Repositories</span>
+      </Link>
       <div className="repo-detail">
         {renderDetailsHeader()}
         <div className="repo-info">

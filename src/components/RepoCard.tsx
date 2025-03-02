@@ -21,7 +21,7 @@ export const RepoCard: React.FC<RepoCardProps> = ({ repo }) => {
           className="avatar"
         />
         <div>
-          <h3>{repo.full_name}</h3>
+          <h3>{repo.name}</h3>
           <small>
             Created: {new Date(repo.created_at).toLocaleDateString()}
           </small>

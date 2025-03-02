@@ -39,14 +39,14 @@ export const RepoList: React.FC = () => {
   if (loading) {
     return (
       <div className="loader">
-        <div className="spinner" />
+        <div className="spinner" data-testid="spinner" />
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="error-state">
+      <div className="error-state" data-testid="error-state">
         <p>{error}</p>
         <button onClick={() => window.location.reload()}>Retry</button>
       </div>
@@ -68,7 +68,7 @@ export const RepoList: React.FC = () => {
         </div>
       </header>
 
-      <div className="repo-list">
+      <div className="repo-list" data-testid="repo-list">
         {filteredRepos.length > 0 ? (
           filteredRepos.map((repo) => <RepoCard key={repo.id} repo={repo} />)
         ) : (

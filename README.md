@@ -1,54 +1,80 @@
-# React + TypeScript + Vite
+# GitHub Repo Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight React application to explore GoDaddy's GitHub repositories. It fetches repositories from the GoDaddy GitHub organization and allows users to view details such as description, languages used, stars, forks, and more.
 
-Currently, two official plugins are available:
+This project is hosted on GitHub Pages.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+View live at: https://netam-bhardwaj.github.io/github-repo-explorer/
 
-## Expanding the ESLint configuration
+# Features:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Repository List: Fetches and displays a list of repositories from the GoDaddy GitHub organization.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Search: Allows users to search repositories by name or description.
+
+- Repository Details: Displays detailed information about a repository, including:
+
+* Description
+* Languages used
+* Stars, forks, and watchers count
+* Default branch
+* Open issues count
+* Last updated date
+
+- Responsive Design: Works seamlessly on both desktop and mobile devices.
+
+# Libraries/Technologies Used:
+
+- Vite: Used for a faster development experience as this is a lightweight application.
+
+- React Router DOM: Although, normal components could have been used here for navigation as this is a two page application but to build the project in a maintainable and scalable way I have used React Router DOM as this simplifies navigation and state management between pages.
+
+- Axios: Lightweight HTTP client for fetching data.
+
+- Lucide React: Offers a wide range of customizable icons for a polished UI.
+
+- Vitest: Used for fast test execution and compatibility with the Vite ecosystem.
+
+- TypeScript: Used for type safety and reducing runtime errors.
+
+# Omissions:
+
+- Pagination: Fetch and display repositories in pages for better performance.
+
+- Advanced Filtering: Add filters for sorting repositories by stars, forks, etc.
+
+- More detailed Repo details page: We have a lot of URLs in the response which we can make an API call to get additional information about each repo, but due to time constraints I have only kept useful information and didn't over engineer the solution and add unnecessary API calls.
+
+# Installation:
+
+```bash
+git clone https://github.com/netam-bhardwaj/github-repo-explorer.git
+cd github-repo-explorer
+yarn install
+yarn dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open your browser and visit: http://localhost:5173
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# Running tests:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+yarn test
+yarn test:watch //watch mode.
+```
+
+# Deployment
+
+The project is deployed using GitHub Pages.
+
+Build the project:
+
+```bash
+yarn build
+```
+
+Deploy to GitHub Pages:
+
+```bash
+yarn deploy
 ```
